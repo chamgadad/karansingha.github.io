@@ -162,6 +162,8 @@
 
     /* Mobile */
     @media (max-width: 820px) {
+      .swiss-row { grid-template-columns: 1fr; gap: 16px; }
+      .swiss-img { max-height: none; }
       section.slide {min-height: auto; padding: 10vh 6vw; }
       .two, .varun-layout, .titan-layout { grid-template-columns: 1fr; }
       .hero-photo {
@@ -339,7 +341,7 @@
   <!-- 15. Swiss Beauty -->
   <section class="slide">
     <p class="head reveal" style="margin-bottom:2rem;">SWISS BEAUTY</p>
-    <div class="two swiss-row">
+    <div class="swiss-row">
       <img class="swiss-img reveal" src="images/swiss-2.jpg" alt="Swiss Beauty collage, makeup grid">
       <img class="swiss-img reveal" src="images/swiss-1.jpg" alt="Swiss Beauty collage, makeup grid">
     </div>
