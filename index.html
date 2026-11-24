@@ -20,7 +20,7 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: auto; }
 
     body {
       background: var(--bg);
@@ -162,7 +162,7 @@
 
     /* Mobile */
     @media (max-width: 820px) {
-      section.slide { padding: 10vh 6vw; }
+      section.slide {min-height: auto; padding: 10vh 6vw; }
       .two, .varun-layout, .titan-layout { grid-template-columns: 1fr; }
       .hero-photo {
         position: relative;
