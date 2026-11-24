@@ -3,17 +3,297 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Karan Singha's Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Karan Singha, Group Head of Content & Social Media. Selected projects.">
+  <title>Karan Singha | Projects</title>
+  <style>
+    :root {
+      --navy: #0f1b2d;
+      --paper: #f7f5f0;
+      --accent: #c8553d;
+      --text: #1d1d1f;
+      --muted: #6b6b70;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      color: var(--text);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(15, 27, 45, 0.92);
+      color: #fff;
+      backdrop-filter: blur(6px);
+    }
+
+    header .name { font-family: var(--serif); font-size: 1.1rem; }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1.25rem;
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    nav a:hover { opacity: 1; text-decoration: underline; }
+
+    /* Intro */
+    .intro {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 2rem 4rem;
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .intro h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.1;
+      max-width: 14ch;
+    }
+
+    .intro p {
+      margin-top: 1.25rem;
+      max-width: 52ch;
+      opacity: 0.85;
+      font-size: 1.1rem;
+    }
+
+    .intro .scroll-hint {
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.6;
+    }
+
+    /* Project sections */
+    .project {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      padding: 6rem 2rem;
+    }
+
+    .project:nth-of-type(even) { background: #ece8df; }
+
+    .project:nth-of-type(even) .visual { order: -1; }
+
+    .visual {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 6px;
+      background: linear-gradient(135deg, var(--navy), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      opacity: 0.9;
+    }
+
+    .project .number {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    .project h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin: 0.5rem 0 0.75rem;
+      line-height: 1.15;
+    }
+
+    .project .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .project p.desc {
+      max-width: 50ch;
+      margin-bottom: 1.25rem;
+    }
+
+    .tags {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tags li {
+      font-size: 0.8rem;
+      padding: 0.3rem 0.75rem;
+      border: 1px solid var(--navy);
+      border-radius: 999px;
+    }
+
+    .project .link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+    }
+
+    /* Contact */
+    footer {
+      padding: 4rem 2rem;
+      background: var(--navy);
+      color: #fff;
+      text-align: center;
+    }
+
+    footer a { color: #fff; }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      header { padding: 0.9rem 1.25rem; }
+      nav a { margin-left: 0.9rem; font-size: 0.85rem; }
+      .project {
+        grid-template-columns: 1fr;
+        padding: 5rem 1.25rem;
+        gap: 2rem;
+      }
+      .project:nth-of-type(even) .visual { order: 0; }
+    }
+  </style>
 </head>
 <body>
+
   <header>
-    <h1>Hi, I'm Karan</h1>
-    <p>Content Strategist</p>
+    <span class="name">Karan Singha</span>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
-  <main>
-    <h2>About</h2>
-    <p>I give ideas for branded content that establish brand personality and help the brand scale</p>
+
+  <section class="intro">
+    <h1>Karan Singha</h1>
+    <p>Group Head of Content &amp; Social Media. Over 11 years across automotive, FMCG, D2C, real estate, and fashion brands. A short line about your approach goes here.</p>
+    <p class="scroll-hint">Scroll to see selected work</p>
+  </section>
+
+  <main id="projects">
+
+    <section class="project">
+      <div>
+        <p class="number">01</p>
+        <h2>Hyundai</h2>
+        <p class="meta">Content &amp; Social Media · Innocean Worldwide India · Year</p>
+        <p class="desc">Describe the campaign or account work here. Mention the goal, your role, and one concrete result if you can share it.</p>
+        <ul class="tags">
+          <li>Automotive</li>
+          <li>Social Media</li>
+          <li>Campaign</li>
+        </ul>
+        <a class="link" href="#">View case study →</a>
+      </div>
+      <div class="visual">Project image</div>
+    </section>
+
+    <section class="project">
+      <div>
+        <p class="number">02</p>
+        <h2>TVS iQube</h2>
+        <p class="meta">Instagram Strategy · Year</p>
+        <p class="desc">Explain the strategy you built, the audience you targeted, and the content formats you used.</p>
+        <ul class="tags">
+          <li>Strategy</li>
+          <li>Instagram</li>
+          <li>Electric Vehicles</li>
+        </ul>
+        <a class="link" href="#">View case study →</a>
+      </div>
+      <div class="visual">Project image</div>
+    </section>
+
+    <section class="project">
+      <div>
+        <p class="number">03</p>
+        <h2>Ultimate Unleashed</h2>
+        <p class="meta">Themed Photoshoot &amp; Digital Campaign · Year</p>
+        <p class="desc">Summarize the concept, how the shoot was rolled out across digital channels, and what it achieved.</p>
+        <ul class="tags">
+          <li>Photoshoot</li>
+          <li>Digital Campaign</li>
+          <li>Creative Direction</li>
+        </ul>
+        <a class="link" href="#">View case study →</a>
+      </div>
+      <div class="visual">Project image</div>
+    </section>
+
+    <section class="project">
+      <div>
+        <p class="number">04</p>
+        <h2>Staging Spaces Design</h2>
+        <p class="meta">Social Media Consulting · Year</p>
+        <p class="desc">Describe the problem the interior design studio had, the plan you put together, and the outcome.</p>
+        <ul class="tags">
+          <li>Consulting</li>
+          <li>Interiors</li>
+          <li>Content Planning</li>
+        </ul>
+        <a class="link" href="#">View case study →</a>
+      </div>
+      <div class="visual">Project image</div>
+    </section>
+
+    <section class="project">
+      <div>
+        <p class="number">05</p>
+        <h2>gyaanmaster</h2>
+        <p class="meta">Tech Creator · YouTube &amp; Instagram · Year</p>
+        <p class="desc">Share what the channel covers, who it is for, and what you have learned while building it.</p>
+        <ul class="tags">
+          <li>YouTube</li>
+          <li>Instagram</li>
+          <li>Tech</li>
+        </ul>
+        <a class="link" href="#">Watch on YouTube →</a>
+      </div>
+      <div class="visual">Project image</div>
+    </section>
+
   </main>
+
+  <footer id="contact">
+    <p>Let's work together.</p>
+    <p style="margin-top: 0.75rem;">
+      <a href="mailto:you@example.com">you@example.com</a> ·
+      <a href="https://linkedin.com/in/karansingha">LinkedIn</a>
+    </p>
+  </footer>
+
 </body>
 </html>
